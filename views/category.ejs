@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=itemCategory%></title>
+  </head>
+  <body>
+    <%- include('./nav.ejs') %>
+
+    <h2><%= itemCategory%>:</h2>
+
+    <ul>
+      <% showItems.forEach(function(item) { %>
+      <li>
+        <h3><%= item.name %></h3>
+        <p>Price: $<%= item.price %></p>
+        <p>
+          Rating: <%= item.rating %> <% for (let i = 0; i < item.rating; i++) {
+          %>⭐<% } %>
+        </p>
+        <p>Details: <%= item.details %></p>
+      </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
